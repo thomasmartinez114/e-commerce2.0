@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce2",
+  "version": "1.0.0",
+  "description": "This directory will hold my 2nd version of e-commerce site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasmartinez114/e-commerce2.0.git"
+  },
+  "author": "Thomas Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomasmartinez114/e-commerce2.0/issues"
+  },
+  "homepage": "https://github.com/thomasmartinez114/e-commerce2.0#readme"
+}
