@@ -1,15 +1,18 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+
+app.use(bodyParser.json());
 
 app.use('/', express.static('public'));
 
 app.get('/', (req, res) => res.send('Hello world'));
 
-app.get('/api', function (req, res) {
-    const userName = req.query.username;
-    const userId = req.query.id;
-    const message = req.query.message;
+app.post('/api', function (req, res) {
+    const userName = req.body.username;
+    const userId = req.body.id;
+    const message = req.body.message;
     console.log(userName);
     const reply = `${userName} with id of ${userId} is saying ${message}`
     res.send(reply);
