@@ -19,6 +19,7 @@
   "homepage": "https://github.com/thomasmartinez114/e-commerce2.0#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.5.12",
     "nodemon": "^1.19.1"
   }
 }
