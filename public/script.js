@@ -1,24 +1,26 @@
-function getUserInfo() {
-    const input = document.getElementById('userName').value;
+/* global axios */
+
+function getSellerInfo() {
+    const input = document.getElementById('sellerUsername').value
     console.log(input);
     axios.get(`/showprofile/ ${input}`)
-    .then(response => {
-        document.getElementById('userInfo').innerHTML = response.data
-    })
+        .then(response => {
+            document.getElementById('sellerInfo').innerHTML = response.data;
+        })
 }
 
 function handleSubmit() {
-    const userName = document.getElementById('user-name').value;
-    const userId = document.getElementById('user-id').value;
-    const message = document.getElementById('message').value;
-    console.log(userName, userId, message);
+    const product = document.getElementById('productName').value;
+    const price = document.getElementById('productPrice').value;
+    const description = document.getElementById('productDescription').value;
+    console.log(product, price, description);
     const payload = {
-        username: userName,
-        id: userId,
-        message
+        product,
+        price,
+        description
     }
-    axios.post('/api', payload)
-    .then(response => {
-        console.log(response)
-    })
+    axios.post('/api/', payload)
+        .then(response => {
+            console.log(response)
+        })
 }

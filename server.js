@@ -1,30 +1,32 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 8080;
 
+// Bodyparser
 app.use(bodyParser.json());
 
+// Static HTML Page
 app.use('/', express.static('public'));
 
-app.get('/', (req, res) => res.send('Hello world'));
-
 app.post('/api', function (req, res) {
-    const userName = req.body.username;
-    const userId = req.body.id;
-    const message = req.body.message;
-    console.log(userName);
-    const reply = `${userName} with id of ${userId} is saying ${message}`
+    const sellerUsername = req.body.sellerUsername;
+    const sellerCity = req.body.sellerCity;
+    const sellerState = req.body.sellerState;
+    const productName = req.body.productName;
+    const productId = req.body.productId;
+    const productPrice = req.body.productPrice;
+    const productDescription = req.body.productDescription;
+
+    const reply = `${sellerUsername} from ${sellerCity}, ${sellerState} is selling ${productName} ${productId} for ${productPrice}. Here is a description of ${productName}: ${productDescription}`
     res.send(reply);
 })
 
-app.get('/showprofile/:username', function (req, res) {
-    const user = req.params.username;
+app.get('/showprofile:username', function (req, res) {
+    const user = req.params.sellerUsername;
     console.log(user);
-
-    res.send('show profile working');
+    res.send('showprofile working');
 })
 
 
-app.listen(port, () => console.log(`App is listening on port ${port}!`));
-
+app.listen(port, () => console.log(`E-Commerce app is listening on port ${port}`));
