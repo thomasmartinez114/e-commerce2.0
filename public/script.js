@@ -24,6 +24,7 @@ function handleSubmit() {
     })
 }
 
+
 function getAllUsers() {
     axios.get('/getallusers/')
     .then(response => {
