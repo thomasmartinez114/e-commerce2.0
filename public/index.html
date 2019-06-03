@@ -4,21 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tommie's Bargain</title>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
-    <link rel='stylesheet' href='styles.css'>
+    <title>Tommie's Bargains</title>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <script src='script.js'></script>
+    <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-    <h2>Welcome to Tommie's Bargain!</h2>
-    <input placeholder="seller's name" id='sellerUsername' type='text'>
-        <button onclick='getSellerInfo()'>Seller Info</button>
-    <p id='sellerInfo'></p>
-    
-    <h3>Post Product to Sell</h3>
-    <input placeholder='Product being sold' id='productName' type='text'>
-    <input placeholder='Product price' id='productPrice' type='number' min='1'>
-    <input placeholder='Product description' id='productDescription' type='text'>
-    <button onclick='handleSubmit()'>Submit</button>
+    <h2>Welcome to Tommie's Bargains!</h2>
+    <input placeholder='user name' id='userName' type='text'>
+    <button onclick='getUserInfo()'>Get User Info</button>
+    <p id="userInfo"></p>
 </body>
 </html>
