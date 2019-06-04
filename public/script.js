@@ -8,7 +8,7 @@ function getUserInfo() {
     }
 
 function handleSubmit() {
-    const userName = document.getElementById('user-id').value;
+    const userName = document.getElementById('user-name').value;
     const userId = document.getElementById('user-id').value;
     const message = document.getElementById('message').value;
     console.log(userName, userId, message);
@@ -18,7 +18,7 @@ function handleSubmit() {
         id: userId,
         message
     }
-    axios.get('/api/', payload)
+    axios.post('/api/', payload)
     .then(response => {
         console.log(response)
     })
