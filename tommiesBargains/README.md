@@ -1,1 +1,1 @@
-e-commerce app: Tommie's Bargains
+e-commerce app: Tommie's Bargains.
