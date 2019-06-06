@@ -16,6 +16,17 @@ app.get("/api", function(req, res) {
   res.send(reply);
 });
 
+app.get('/showseller/:sellername', function(req, res){
+    const seller = req.params.sellername;
+    console.log(seller)
+
+    res.send('show seller working');
+})
+
+
+
+
+
 app.listen(port, () =>
   console.log(`Tommie's Bargain App is running on port: ${port}`)
 );
