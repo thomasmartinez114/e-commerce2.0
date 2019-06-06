@@ -17,12 +17,12 @@
   <div class="insert-wrapper">
     <h3>Post your product to sell!</h3>
     <div class="insert-info">
+      <input placeholder='E-mail' id='sellerEmail' type='text'>
       <input placeholder='Your Name' id='sellerName' type='text'>
       <input placeholder='City' id='sellerCity' type='text'>
       <input placeholder='State' id='sellerState' type='text' maxlength="2">
       <input placeholder='Product Selling' id='productName' type='text'>
       <input placeholder='Price' id='productPrice' type='number'>
-      <input placeholder='Description' id='productDescription' type='text'>
       <button onclick='getSellerInfo()'>Get Seller Info</button>
     </div>
     <div class="display-info">
@@ -34,9 +34,8 @@
     <h3>Seller Registration</h3>
 
     <div class="regis-prod">
-      <input type='text' id='user-name' placeholder='User Name'>
-      <input type='text' id='user-id' placeholder='User ID'>
-      <input type='text' id='message' placeholder='Message'>
+      <input type='text' id='seller-email' placeholder='E-mail'>
+      <input type='text' id='seller-name' placeholder='Your Name'>
       <button onclick='handleSubmit()'>Submit</button>
     </div>
   </div>

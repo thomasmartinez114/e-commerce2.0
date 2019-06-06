@@ -7,9 +7,17 @@ function getSellerInfo() {
     })
 }
 
-function handleSubmit(){
-    const userName = document.getElementById('user-name').value;
-    const userId = document.getElementById('user-id').value;
-    const message = document.getElementById('message').value;
-    console.log(userName, UserId, message);
+function handleSubmit() {
+    const sellerEmail = document.getElementById('seller-email').value;
+    const sellerName = document.getElementById('seller-name').value;
+    console.log(sellerEmail, sellerName);
+
+    const payload = {
+        selleremail: sellerEmail,
+        sellername: sellerName
+    }
+    axios.post('/api/', payload)
+    .then(response => {
+        console.log(response)
+    })
 }

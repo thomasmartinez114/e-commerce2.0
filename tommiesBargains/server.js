@@ -9,15 +9,23 @@ app.use(bodyParser.json());
 
 app.use('/', express.static('public'));
 
+var data = [];
 app.post("/api", function(req, res) {
+  const sellerEmail = req.body.selleremail;
   const sellerName = req.body.sellername;
   const sellerCity = req.body.sellercity;
   const sellerState = req.body.sellerstate;
   const productName = req.body.productname;
   const productPrice = req.body.productprice;
-  const description = req.body.productdescription;
 
-  console.log(sellerName, sellerCity, sellerState, productName, productPrice, description);
+  const temp = {
+    selleremail: sellerEmail,
+    sellername: sellerName    
+  }
+
+  data.push(temp)
+  console.log(data);
+
   const reply = `${sellerName} from ${sellerCity}, ${sellerState} is selling a ${productName} for $${productPrice}`
 
   res.send(reply);
