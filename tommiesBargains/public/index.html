@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Tommie's Bargains</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -23,6 +24,20 @@
       <input placeholder='Price' id='productPrice' type='number'>
       <input placeholder='Description' id='productDescription' type='text'>
       <button onclick='getSellerInfo()'>Get Seller Info</button>
+    </div>
+    <div class="display-info">
+      <p id="sellerInfo"></p>
+    </div>
+  </div>
+
+  <div class="regis">
+    <h3>Seller Registration</h3>
+
+    <div class="regis-prod">
+      <input type='text' id='user-name' placeholder='User Name'>
+      <input type='text' id='user-id' placeholder='User ID'>
+      <input type='text' id='message' placeholder='Message'>
+      <button onclick='handleSubmit()'>Submit</button>
     </div>
   </div>
 </body>
