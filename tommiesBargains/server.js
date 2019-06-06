@@ -39,7 +39,9 @@ app.get('/showprofile/:sellername', function(req, res){
 })
 
 
-
+app.get('/getallsellers', function(req, res) {
+  res.send(data)
+})
 
 
 app.listen(port, () =>

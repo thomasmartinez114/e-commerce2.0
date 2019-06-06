@@ -30,14 +30,22 @@
     </div>
   </div>
 
-  <div class="regis">
+  <div class="regis-wrapper">
     <h3>Seller Registration</h3>
-
     <div class="regis-prod">
       <input type='text' id='seller-email' placeholder='E-mail'>
       <input type='text' id='seller-name' placeholder='Your Name'>
       <button onclick='handleSubmit()'>Submit</button>
     </div>
+  </div>
+
+  <div class="get-users-wrapper">
+    <h3>Get all Sellers</h3>
+    <button onclick='getAllSellers()'>Populate Sellers</button>
+  </div>
+  <div id="display-sellers">
+    <p id="result"></p>
+  </div>
   </div>
 </body>
 

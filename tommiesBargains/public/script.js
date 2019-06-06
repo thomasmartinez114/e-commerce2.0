@@ -21,3 +21,10 @@ function handleSubmit() {
         console.log(response)
     })
 }
+
+function getAllSellers() {
+    axios.get('/getallsellers/')
+    .then(response => {
+        document.getElementById('result').innerHTML = JSON.stringify(response.data)
+    })
+}
