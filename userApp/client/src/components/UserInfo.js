@@ -6,7 +6,7 @@ class UserInfo extends Component {
     }
 
     handleClick = () => {
-        console.log('userName:', this.state.userName);
+        console.log('userName', this.state.userName);
     }
     render(){
         return(
