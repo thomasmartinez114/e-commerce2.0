@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-router.get("/", (req, res) => res.send("api route is working!"))
+router.get("/", (req, res) => res.send("api route is working"));
 
 router.post('/', function (req, res) {
   const userName = req.body.username;
