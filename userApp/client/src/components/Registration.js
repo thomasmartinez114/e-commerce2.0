@@ -6,6 +6,11 @@ class Registration extends Component{
         message: ''
     }
     
+    handleClick = () => {
+        console.log('userName:', this.state.userName);
+        console.log('message:', this.state.message);
+    }
+    
     render(){
         return (
             <div>
@@ -18,7 +23,7 @@ class Registration extends Component{
                   onChange={ e => this.setState({message: e.target.value})}
                   placeholder="Message"
                 />
-                <button>Submit</button>
+                <button onClick={this.handleClick}>Submit</button>
                 {this.state.userName}
                 {this.state.message}
             </div>
