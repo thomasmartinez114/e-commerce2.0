@@ -41,15 +41,26 @@ app.post("/api", function(req, res) {
   // res.send(reply);
 });
 
-app.get("/showprofile/:sellername", function(req, res) {
-  const seller = req.params.sellername;
-  console.log(seller);
+app.get("/showprofile/:selleremail", function(req, res) {
+  const sellerEmail = req.params.selleremail;
+  console.log(sellerEmail);
 
-  res.send("show profile working");
+  Seller.find({ selleremail: sellerEmail })
+    .then(result => {
+      console.log("Showing", sellerEmail, "profile:", result);
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(err);
+    });
 });
 
 app.get("/getallsellers", function(req, res) {
-  res.send(data);
+  Seller.find().then(results => {
+    console.log(results);
+    res.send(results);
+  });
 });
 
 app.listen(port, () =>

@@ -15,14 +15,11 @@
   <h2>Welcome to Tommie's Bargains!</h2>
 
   <div class="insert-wrapper">
-    <h3>Post your product to sell!</h3>
+    <h3>Find a Product by the following:</h3>
     <div class="insert-info">
-      <input placeholder='E-mail' id='sellerEmail' type='text'>
-      <input placeholder='Your Name' id='sellerName' type='text'>
-      <input placeholder='City' id='sellerCity' type='text'>
-      <input placeholder='State' id='sellerState' type='text' maxlength="2">
-      <input placeholder='Product Selling' id='productName' type='text'>
-      <input placeholder='Price' id='productPrice' type='number'>
+      <input placeholder="Seller's E-mail" id='sellerEmail' type='text'>
+      <h3>OR</h3>
+      <input placeholder='Product Being Sold' id='productName' type='text'>
       <button onclick='getSellerInfo()'>Get Seller Info</button>
     </div>
     <div class="display-info">
@@ -32,20 +29,25 @@
 
   <div class="regis-wrapper">
     <h3>Seller Registration</h3>
-    <div class="regis-prod">
+    <div class="regis-info">
       <input type='text' id='seller-email' placeholder='E-mail'>
       <input type='text' id='seller-name' placeholder='Your Name'>
+      <input placeholder='City' id='sellerCity' type='text'>
+      <input placeholder='State' id='sellerState' type='text' maxlength="2">
+      <input placeholder='Product Selling' id='productName' type='text'>
+      <input placeholder='Price' id='productPrice' type='number'>
       <button onclick='handleSubmit()'>Submit</button>
     </div>
   </div>
 
-  <div class="get-users-wrapper">
-    <h3>Get all Sellers</h3>
+  <div class="get-sellers-wrapper">
+    <h3>Retrieve All Sellers</h3>
     <button onclick='getAllSellers()'>Populate Sellers</button>
+    <div id="display-sellers">
+      <p id="result"></p>
+    </div>
   </div>
-  <div id="display-sellers">
-    <p id="result"></p>
-  </div>
+
   </div>
 </body>
 

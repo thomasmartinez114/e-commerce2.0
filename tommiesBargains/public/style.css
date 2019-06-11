@@ -14,3 +14,17 @@
     display: flex;
     flex-wrap: wrap;
 } */
+
+.insert-wrapper,
+.regis-wrapper,
+.get-sellers-wrapper {
+    border: 2px solid black;
+    margin: 20px 2px 2px 2px;
+}
+
+.insert-info,
+.regis-info,
+.display-sellers {
+    flex-wrap: wrap;
+    padding: 50px;
+}
