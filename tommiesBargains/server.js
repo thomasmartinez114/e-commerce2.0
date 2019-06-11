@@ -1,13 +1,21 @@
 const express = require("express");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({extended: false}));
+// Connect to Mongoose
+const mongoose = require("mongoose");
+mongoose
+  .connect(
+    "mongodb+srv://admin:Password123@cluster0-phcrf.mongodb.net/tommiesBargains?retryWrites=true&w=majority",
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("DB Connected"));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-app.use('/', express.static('public'));
+app.use("/", express.static("public"));
 
 var data = [];
 app.post("/api", function(req, res) {
@@ -20,29 +28,27 @@ app.post("/api", function(req, res) {
 
   const temp = {
     selleremail: sellerEmail,
-    sellername: sellerName    
-  }
+    sellername: sellerName
+  };
 
-  data.push(temp)
+  data.push(temp);
   console.log(data);
 
-  const reply = `${sellerName} from ${sellerCity}, ${sellerState} is selling a ${productName} for $${productPrice}`
+  const reply = `${sellerName} from ${sellerCity}, ${sellerState} is selling a ${productName} for $${productPrice}`;
 
   res.send(reply);
 });
 
-app.get('/showprofile/:sellername', function(req, res){
-    const seller = req.params.sellername;
-    console.log(seller)
+app.get("/showprofile/:sellername", function(req, res) {
+  const seller = req.params.sellername;
+  console.log(seller);
 
-    res.send('show profile working');
-})
+  res.send("show profile working");
+});
 
-
-app.get('/getallsellers', function(req, res) {
-  res.send(data)
-})
-
+app.get("/getallsellers", function(req, res) {
+  res.send(data);
+});
 
 app.listen(port, () =>
   console.log(`Tommie's Bargain App is running on port: ${port}`)
