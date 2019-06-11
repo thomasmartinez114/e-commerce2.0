@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 const keys = require("./keys");
+const Seller = require("./models/Seller");
 
 // Connect to Mongoose
 const mongoose = require("mongoose");
@@ -15,7 +16,6 @@ app.use(bodyParser.json());
 
 app.use("/", express.static("public"));
 
-var data = [];
 app.post("/api", function(req, res) {
   const sellerEmail = req.body.selleremail;
   const sellerName = req.body.sellername;
@@ -24,17 +24,21 @@ app.post("/api", function(req, res) {
   const productName = req.body.productname;
   const productPrice = req.body.productprice;
 
-  const temp = {
+  const data = {
     selleremail: sellerEmail,
     sellername: sellerName
   };
-
-  data.push(temp);
   console.log(data);
 
-  const reply = `${sellerName} from ${sellerCity}, ${sellerState} is selling a ${productName} for $${productPrice}`;
+  const seller = new Seller(data);
+  seller
+    .save()
+    .then(() => res.send(data))
+    .catch(err => console.log(err));
 
-  res.send(reply);
+  // const reply = `${sellerName} from ${sellerCity}, ${sellerState} is selling a ${productName} for $${productPrice}`;
+
+  // res.send(reply);
 });
 
 app.get("/showprofile/:sellername", function(req, res) {
