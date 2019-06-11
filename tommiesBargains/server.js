@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const api = require("./routes/api");
 const app = express();
 const port = 3000;
 const keys = require("./keys");
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/", express.static("public"));
+
+app.use("/api", api);
 
 app.post("/api", function(req, res) {
   const sellerEmail = req.body.selleremail;
