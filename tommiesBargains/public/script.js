@@ -1,6 +1,6 @@
 function getSellerInfo() {
   const input = document.getElementById("sellerEmail").value;
-  const url = "/showprofile/" + input;
+  const url = "/api/showprofile/" + input;
   axios.get(url).then(response => {
     document.getElementById("sellerInfo").innerHTML = JSON.stringify(
       response.data
@@ -23,7 +23,7 @@ function handleSubmit() {
 }
 
 function getAllSellers() {
-  axios.get("/getallsellers/").then(response => {
+  axios.get("/api/getallsellers").then(response => {
     document.getElementById("result").innerHTML = JSON.stringify(response.data);
   });
 }
