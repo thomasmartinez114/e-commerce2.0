@@ -2,15 +2,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
+const keys = require("./keys");
 
 // Connect to Mongoose
 const mongoose = require("mongoose");
 mongoose
-  .connect(
-    "mongodb+srv://admin:Password123@cluster0-phcrf.mongodb.net/tommiesBargains?retryWrites=true&w=majority",
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log("DB Connected"));
+  .connect(keys.mongoDBUrl, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB Atlas Connected"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
