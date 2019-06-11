@@ -8,16 +8,14 @@ class Registration extends Component {
   };
 
   handleClick = () => {
-    console.log("userName:", this.state.userName);
-    console.log("message:", this.state.message);
+    console.log("userName:", this.state);
 
     const data = {
       username: this.state.userName,
       message: this.state.message
     };
 
-    axios.post("/api", data)
-    .then(res => console.log(res.data))
+    axios.post("/api", data).then(res => console.log(res.data));
   };
 
   render() {
