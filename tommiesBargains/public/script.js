@@ -2,10 +2,27 @@ function getSellerInfo() {
   const input = document.getElementById("sellerEmail").value;
   const url = "/api/showprofile/" + input;
   axios.get(url).then(response => {
-    document.getElementById("sellerInfo").innerHTML = JSON.stringify(
-      response.data
+    displaySellers(response.data, "sellerInfo");
+  });
+}
+
+function displaySellers(sellerData, id) {
+  const listItems = sellerData.map(element => {
+    return (
+      "<li>" +
+      "Email: " +
+      element.selleremail +
+      " || " +
+      "Seller: " +
+      (element.sellername
+        ? element.sellername
+        : " " + element.selleremail + " did not include their email address.") +
+      "</li>"
     );
   });
+
+  document.getElementById(id).innerHTML =
+    "<ul>" + listItems.join("\n") + "</ul>";
 }
 
 function handleSubmit() {
@@ -24,6 +41,6 @@ function handleSubmit() {
 
 function getAllSellers() {
   axios.get("/api/getallsellers").then(response => {
-    document.getElementById("result").innerHTML = JSON.stringify(response.data);
+    displaySellers(response.data, "result");
   });
 }
