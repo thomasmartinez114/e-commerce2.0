@@ -1,8 +1,10 @@
 function getSellerInfo() {
   const input = document.getElementById("sellerEmail").value;
-  console.log(input);
-  axios.get("/showprofile/" + input).then(response => {
-    document.getElementById("sellerInfo").innerHTML = response.data;
+  const url = "/showprofile/" + input;
+  axios.get(url).then(response => {
+    document.getElementById("sellerInfo").innerHTML = JSON.stringify(
+      response.data
+    );
   });
 }
 
