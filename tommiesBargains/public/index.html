@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <h2>Welcome to Tommie's Bargains!</h2>
+  <h2 class='title'>Welcome to Tommie's Bargains!</h2>
 
   <div class="insert-wrapper">
     <h3>Find a Product by the following:</h3>
@@ -36,6 +36,9 @@
       <input placeholder='State' id='sellerState' type='text' maxlength="2">
       <input placeholder='Product Selling' id='productName' type='text'>
       <input placeholder='Price' id='productPrice' type='number'>
+      <input type='file' id='real-file' hidden='hidden'/>
+      <button onclick='buttonPress()' type='button' id='custom-button'>CHOOSE A IMAGE</button>
+      <span id="custom-text">No image chosen, yet</span>
       <button onclick='handleSubmit()'>Submit</button>
     </div>
   </div>

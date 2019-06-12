@@ -16,19 +16,42 @@
 } */
 
 body {
-    width: 700px;
+  width: 700px;
+}
+
+.title {
+  text-decoration: underline;
 }
 
 .insert-wrapper,
 .regis-wrapper,
 .get-sellers-wrapper {
-    border: 2px solid black;
-    margin: 20px 2px 2px 2px;
+  border: 2px solid black;
+  margin: 20px 2px 2px 2px;
 }
 
 .insert-info,
 .regis-info,
 .display-sellers {
-    flex-wrap: wrap;
-    padding: 50px;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+#custom-button {
+  padding: 10px;
+  color: white;
+  background-color: #009578;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#custom-button:hover {
+  background-color: #00bZ8f;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
 }
