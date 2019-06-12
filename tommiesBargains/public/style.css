@@ -15,6 +15,10 @@
     flex-wrap: wrap;
 } */
 
+body {
+    width: 700px;
+}
+
 .insert-wrapper,
 .regis-wrapper,
 .get-sellers-wrapper {
