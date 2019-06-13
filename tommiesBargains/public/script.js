@@ -54,4 +54,13 @@ function buttonPress() {
   customBtn.addEventListener("click", function() {
     realFileBtn.click();
   });
+  realFileBtn.addEventListener("change", function() {
+    if (realFileBtn.value) {
+      customTxt.innerHTML = realFileBtn.value.match(
+        /[\/\\]([\w\d\s\.\-\(\)]+)$/
+      )[1]; // this will display only file name not the entire path
+    } else {
+      customTxt.innerHTML = "No file chosen, yet";
+    }
+  });
 }
