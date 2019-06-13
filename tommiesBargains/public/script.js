@@ -28,11 +28,26 @@ function displaySellers(sellerData, id) {
 function handleSubmit() {
   const sellerEmail = document.getElementById("seller-email").value;
   const sellerName = document.getElementById("seller-name").value;
-  console.log(sellerEmail, sellerName);
+  const sellerCity = document.getElementById("seller-city").value;
+  const sellerState = document.getElementById("seller-state").value;
+  const productName = document.getElementById("product-name").value;
+  const productPrice = document.getElementById("product-price").value;
+  console.log(
+    sellerEmail,
+    sellerName,
+    sellerCity,
+    sellerState,
+    productName,
+    productPrice
+  );
 
   const payload = {
     selleremail: sellerEmail,
-    sellername: sellerName
+    sellername: sellerName,
+    sellercity: sellerCity,
+    sellerstate: sellerState,
+    productname: productName,
+    productprice: productPrice
   };
   axios.post("/api/", payload).then(response => {
     console.log(response);
