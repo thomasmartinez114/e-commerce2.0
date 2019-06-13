@@ -14,9 +14,12 @@ function displaySellers(sellerData, id) {
       element.selleremail +
       " || " +
       "Seller: " +
-      (element.sellername
-        ? element.sellername
-        : " " + element.selleremail + " did not include their email address.") +
+      element.sellername +
+      " || " +
+      "Location: " +
+      element.sellercity +
+      ", " +
+      element.sellerstate +
       "</li>"
     );
   });
