@@ -11,10 +11,18 @@ function displayProducts(productData, id) {
     return (
       "<li>" +
       "Product: " +
+      "<strong>" +
       element.productname +
-      " selling for " +
+      "</strong>" +
+      " is posted at a price of $" +
+      "<strong>" +
       element.productprice +
-      ". That looks like a bargain to me!" +
+      "</strong>" +
+      ". For purchase, contact " +
+      "<strong>" +
+      element.selleremail +
+      "</strong>" +
+      " !" +
       "</li>"
     );
   });
@@ -37,6 +45,9 @@ function displaySellers(sellerData, id) {
       element.sellercity +
       ", " +
       element.sellerstate +
+      " || " +
+      "Product: " +
+      element.productname +
       "</li>"
     );
   });
