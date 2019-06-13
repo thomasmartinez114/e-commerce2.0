@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tommie's Bargains</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Tommie's Bargains</title>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <h2 class="title">Welcome to Tommie's Bargains!</h2>
 
-<body>
-  <h2 class='title'>Welcome to Tommie's Bargains!</h2>
+    <div class="body-wrapper">
+      <div class="insert-wrapper">
+        <h3>Find a Product by the following:</h3>
+        <div class="insert-info">
+          <input placeholder="Seller's E-mail" id="sellerEmail" type="text" />
+          <h3>OR</h3>
+          <input
+            placeholder="Product Being Sold"
+            id="productName"
+            type="text"
+          />
+          <button onclick="getSellerInfo()">Get Seller Info</button>
+        </div>
+        <div class="display-info">
+          <p id="sellerInfo"></p>
+        </div>
+      </div>
 
-  <div class="insert-wrapper">
-    <h3>Find a Product by the following:</h3>
-    <div class="insert-info">
-      <input placeholder="Seller's E-mail" id='sellerEmail' type='text'>
-      <h3>OR</h3>
-      <input placeholder='Product Being Sold' id='productName' type='text'>
-      <button onclick='getSellerInfo()'>Get Seller Info</button>
+      <hr />
+
+      <div class="regis-wrapper">
+        <h3>Seller Registration</h3>
+        <div class="regis-info">
+          <input type="text" id="seller-email" placeholder="E-mail" />
+          <input type="text" id="seller-name" placeholder="Your Name" />
+          <input placeholder="City" id="sellerCity" type="text" />
+          <input
+            placeholder="State"
+            id="sellerState"
+            type="text"
+            maxlength="2"
+          />
+          <input placeholder="Product Selling" id="productName" type="text" />
+          <input placeholder="Price" id="productPrice" type="number" />
+          <br />
+          <br />
+          <input type="file" id="real-file" hidden="hidden" />
+          <button onclick="buttonPress()" type="button" id="custom-button">
+            CHOOSE A IMAGE
+          </button>
+          <span id="custom-text">No image chosen, yet</span>
+          <button onclick="handleSubmit()">Submit</button>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="get-sellers-wrapper">
+        <h3>Retrieve All Sellers</h3>
+        <button onclick="getAllSellers()">Populate Sellers</button>
+        <div id="display-sellers">
+          <p id="result"></p>
+        </div>
+      </div>
+
+      <hr />
     </div>
-    <div class="display-info">
-      <p id="sellerInfo"></p>
-    </div>
-  </div>
-
-  <div class="regis-wrapper">
-    <h3>Seller Registration</h3>
-    <div class="regis-info">
-      <input type='text' id='seller-email' placeholder='E-mail'>
-      <input type='text' id='seller-name' placeholder='Your Name'>
-      <input placeholder='City' id='sellerCity' type='text'>
-      <input placeholder='State' id='sellerState' type='text' maxlength="2">
-      <input placeholder='Product Selling' id='productName' type='text'>
-      <input placeholder='Price' id='productPrice' type='number'>
-      
-      <input type='file' id='real-file' hidden='hidden' />
-      <button onclick='buttonPress()' type='button' id='custom-button'>CHOOSE A IMAGE</button>
-      <span id="custom-text">No image chosen, yet</span>
-      <button onclick='handleSubmit()'>Submit</button>
-
-    </div>
-  </div>
-
-  <div class='get-sellers-wrapper'>
-    <h3>Retrieve All Sellers</h3>
-    <button onclick='getAllSellers()'>Populate Sellers</button>
-    <div id="display-sellers">
-      <p id="result"></p>
-    </div>
-  </div>
-
-  </div>
-</body>
-
+  </body>
 </html>

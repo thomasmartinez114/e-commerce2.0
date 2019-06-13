@@ -19,6 +19,11 @@ body {
   width: 700px;
 }
 
+.body-wrapper {
+  justify-content: center;
+  text-align: center;
+}
+
 .title {
   text-decoration: underline;
 }
@@ -26,7 +31,7 @@ body {
 .insert-wrapper,
 .regis-wrapper,
 .get-sellers-wrapper {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   margin: 20px 2px 2px 2px;
 }
 
