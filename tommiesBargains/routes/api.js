@@ -14,7 +14,11 @@ router.post("/", function(req, res) {
 
   const data = {
     selleremail: sellerEmail,
-    sellername: sellerName
+    sellername: sellerName,
+    sellercity: sellerCity,
+    sellerstate: sellerState,
+    productname: productName,
+    productprice: productPrice
   };
   console.log(data);
 
