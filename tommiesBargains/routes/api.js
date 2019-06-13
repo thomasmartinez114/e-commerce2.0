@@ -55,4 +55,19 @@ router.get("/showprofile/:selleremail", function(req, res) {
     });
 });
 
+router.get("/showproduct/:productname", function(req, res) {
+  const productName = req.params.productname;
+  console.log(productName);
+
+  Seller.find({ productname: productName })
+    .then(result => {
+      console.log("Showing", productName, "page:", result);
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(err);
+    });
+});
+
 module.exports = router;

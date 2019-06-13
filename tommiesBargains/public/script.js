@@ -1,9 +1,26 @@
-function getSellerInfo() {
-  const input = document.getElementById("sellerEmail").value;
-  const url = "/api/showprofile/" + input;
+function getProductInfo() {
+  const input = document.getElementById("productName").value;
+  const url = "/api/showproduct/" + input;
   axios.get(url).then(response => {
-    displaySellers(response.data, "sellerInfo");
+    displayProducts(response.data, "productInfo");
   });
+}
+
+function displayProducts(productData, id) {
+  const listProducts = productData.map(element => {
+    return (
+      "<li>" +
+      "Product: " +
+      element.productname +
+      " selling for " +
+      element.productprice +
+      ". That looks like a bargain to me!" +
+      "</li>"
+    );
+  });
+
+  document.getElementById(id).innerHTML =
+    "<ul>" + listProducts.join("\n") + "</ul>";
 }
 
 function displaySellers(sellerData, id) {
