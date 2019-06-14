@@ -12,6 +12,7 @@ e-commerce app: Tommie's Bargains.
 ///////////////////////
 
 - Uploading and Saving images to MongoDB
+- Fuzzy Search to populate search bar
 
 ///////////////
 / REFERENCES /
