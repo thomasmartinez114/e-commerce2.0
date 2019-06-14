@@ -55,6 +55,7 @@ router.get("/showprofile/:selleremail", function(req, res) {
     });
 });
 
+// Searching for certain product
 router.get("/showproduct/:productname", function(req, res) {
   const productName = req.params.productname;
   console.log(productName);
@@ -69,5 +70,13 @@ router.get("/showproduct/:productname", function(req, res) {
       res.send(err);
     });
 });
+
+// Display all products
+// router.get("/showproduct", function(req, res) {
+//   Seller.find().then(results => {
+//     console.log(results);
+//     res.send(results);
+//   });
+// });
 
 module.exports = router;
