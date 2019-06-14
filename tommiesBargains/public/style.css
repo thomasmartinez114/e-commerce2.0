@@ -52,8 +52,12 @@ body {
 }
 
 #custom-button:hover {
-  background-color: #00bZ8f;
+  background-color: blue;
 }
+
+/* #custom-button:hover {
+  background-color: #blue;
+} */
 
 #custom-text {
   margin-left: 10px;

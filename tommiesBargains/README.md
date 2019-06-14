@@ -1,10 +1,22 @@
 e-commerce app: Tommie's Bargains.
 
-Video on image upload button:
-https://www.youtube.com/watch?v=T3PDgtliezo
-.
-
-To run App:
+////////////////
+// To Run App //
+////////////////
 
 - In \tommieBargains >>> npm run dev
 - In \tommieBargains\client >>> npm start
+
+////////////////////////
+// Must Have Features //
+///////////////////////
+
+- Uploading and Saving images to MongoDB
+
+///////////////
+/ REFERENCES /
+///////////////
+
+Video on image upload button:
+https://www.youtube.com/watch?v=T3PDgtliezo
+.
