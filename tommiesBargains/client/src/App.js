@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 
 class App extends Component {
+  getUserInfo = () => {
+    console.log("This button is clicked");
+  };
+
   render() {
     return (
       <div className="App">
-        <h2>My Express App</h2>     
-        <input placeholder="user name" type="text" />
-        <button>Get user info</button>    
+        <h2>Tommie's Bargains</h2>     
+        <input placeholder="Seller's Name" type="text" />
+        <button onClick={this.getSellerInfo}>Get seller info</button>    
       </div>
     );
   }
