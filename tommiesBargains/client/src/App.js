@@ -8,9 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Tommie's Bargains</h2>     
-        <input placeholder="Seller's Name" type="text" />
-        <button onClick={this.getSellerInfo}>Get seller info</button>    
+        <h2>Tommie's Bargains</h2>       
       </div>
     );
   }
